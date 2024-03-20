@@ -1,0 +1,30 @@
+Models:
+    1.)LLM:
+        * generic  functionality
+            --> async for models
+            --> Custome LLM
+            --> Fake LLM for testing
+            --> human input LLM
+            --> Catch LLM calls => basically store prompt and use it when asked again
+                - InMemoryCache
+                - SQLiteCache
+                - RedisCache
+                - RedisSemanticCache
+                - GPTCatch
+                - Momento Catch
+                - SQLAlchemy Catch
+                - Optional Catching
+                - Optional Catching in chain
+            --> serialize LLM Classes in json or yml format
+            --> Stream LLM => instead of waiting for whole response and responding it will respond as soon as it generates
+            --> Track token use-case
+
+        * Integration
+            --> We can use any model from openAI to huggingface
+    2.)chat models:
+        --> AIMessage
+        --> HumanMessage
+        --> SystemMessage
+
+    3.)Text Embedding models:
+        We can use embedding of any other model, for semantic search
