@@ -38,9 +38,15 @@
 - Framework : Langchain
 ```
 ```
-We've employed the Sentence Transformer MiniLM to represent our text data. By creating vector representations of our documents, we store them in Pinecone vector DB. This enables us to perform efficient search operations. Our dataset comprises approximately 4838 rows, and we've chunked it into batches of size 32 for storage in Pinecone in vector format (dimension: 384).
+We've employed the Sentence Transformer MiniLM to represent our text data. 
+By creating vector representations of our documents, we store them in Pinecone vector DB. 
+This enables us to perform efficient search operations. 
+Our dataset comprises approximately 4838 rows, and we've chunked it into batches of size 32 for storage in Pinecone in vector format (dimension: 384).
 
-For the language model, we've utilized Meta's open-source LLM Llama-2, boasting 7 billion parameters. We've harnessed the Hugging Face library to load this model. In our experiments, we've explored two approaches:
+For the language model, we've utilized Meta's open-source LLM Llama-2, boasting 7 billion parameters. 
+We've harnessed the Hugging Face library to load this model. 
+
+In our experiments, we've explored two approaches:
 
 1. Direct queries to the LLM: This involves querying the language model directly.
 2. Queries to the LLM with the context of relevant documents: Here, we provide the LLM with additional context from relevant documents.
