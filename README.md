@@ -26,6 +26,19 @@
 6. Voilà! You get a quick, accurate response straight from those PDFs.
 
 ```
+## Experiments
+
+Experimented with below areas:
+
+1. Instead of using seperate vectorstore we directly find best k(in our case k=4) chucks from document, based on given user query, and pass it with the prompt as context.
+2. Experimented with different prompts.
+
+## Obeservations :
+
+- For larger chunck, faced error, due to context window size.
+- Sometimes, our results were incomplete, due to restriction in number of tokens.
+- Better and more precised prompts gave us good and upto the point results.
+- For text from the document it worked well, but when with table data it failed, it gave some unusal results in terms of digits.
 
 
 **2. llama_2_+_RAG_.ipynb**
