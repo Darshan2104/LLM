@@ -39,6 +39,7 @@ Experimented with below areas:
 - Sometimes, our results were incomplete, due to restriction in number of tokens.
 - Better and more precised prompts gave us good and upto the point results.
 - For text from the document it worked well, but when with table data it failed, it gave some unusal results in terms of digits.
+- High amount of context in prompt affects the latency.
 
 
 ## **2. llama_2_+_RAG_.ipynb**
@@ -71,4 +72,5 @@ In our experiments, we've explored two approaches:
 ### Obeservations :
 
 - Direct queries to llm, without zero context, gave us none relevent results.
-- RAG appraoch worked well, Second one, it gave us more relevent response compared to first one for the given user query.
+- RAG approach worked well, Second one, it gave us more relevent response compared to first one for the given user query.
+- Latency were good for RAG based approach.
