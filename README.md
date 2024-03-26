@@ -7,10 +7,10 @@
 * Langchain
 * Datasets 
 * Vectore DB
-* Sentecen T
+* Sentence Transformer
 ````
 
-1. Interact with pdf files.ipynb
+**1. Interact with pdf files.ipynb**
 
 ```
 - Text representation : OpenAI embedding
@@ -28,7 +28,7 @@
 ```
 
 
-2. llama_2_+_RAG_.ipynb
+**2. llama_2_+_RAG_.ipynb**
 
 ```
 - Dataset : jamescalam/llama-2-arxiv-papers-chunked
@@ -44,12 +44,18 @@ This enables us to perform efficient search operations.
 Our dataset comprises approximately 4838 rows, and we've chunked it into batches of size 32 for storage in Pinecone in vector format (dimension: 384).
 
 For the language model, we've utilized Meta's open-source LLM Llama-2, boasting 7 billion parameters. 
-We've harnessed the Hugging Face library to load this model. 
+We've harnessed the Hugging Face library to load this model with 4bit quantization by bitsandbytes library.
+
+```
+
+## Experiments
 
 In our experiments, we've explored two approaches:
 
 1. Direct queries to the LLM: This involves querying the language model directly.
-2. Queries to the LLM with the context of relevant documents: Here, we provide the LLM with additional context from relevant documents.
+2. RAG pipeline : Queries to the LLM with the context of relevant documents. Based on user query, we retrived top 3 most relevent documents from chromadb and created ragpipline with vectorstore and llama-2 model.
 
-Second apprach gave us more relevent response compared to first one for the given user query.
-```
+## Obeservations :
+
+- Direct queries to llm, without zero context, gave us none relevent results.
+- RAG appraoch worked well, Second one, it gave us more relevent response compared to first one for the given user query.
